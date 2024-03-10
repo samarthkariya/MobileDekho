@@ -1,12 +1,18 @@
 package com.service.post.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductImages {
-    private String thumbnail;
-    private List<String> images;
+    @DBRef
+    private Image thumbnail;
+    @DBRef
+    private List<Image> imageList;
 }
